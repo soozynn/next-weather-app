@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY + "111";
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
 const getCurrentWeather = async () => {
   const res = await fetch(
