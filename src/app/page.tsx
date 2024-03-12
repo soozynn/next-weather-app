@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { getCurrentWeather } from "@/utils/getCurrentWeather";
+import { getCurrentTime } from "@/utils/getCurrentTime";
+import RevalidateButton from "@/components/RevalidateButton";
 
 export default async function Home() {
-  const res = await getCurrentWeather("Seoul");
+  const currentWeatherRes = await getCurrentWeather("seoul");
+  const currentTime = await getCurrentTime(currentWeatherRes.location.tz_id);
 
   return (
     <>
@@ -10,6 +13,7 @@ export default async function Home() {
       <ul>
         <li>
           <Link href="/seoul">서울</Link>
+          <span>{currentWeatherRes.current.condition.text}</span>
         </li>
         <li>
           <Link href="/newyork">뉴욕</Link>
@@ -18,6 +22,7 @@ export default async function Home() {
           <Link href="/london">런던</Link>
         </li>
       </ul>
+      <RevalidateButton tag={"time"} />
     </>
   );
 }
