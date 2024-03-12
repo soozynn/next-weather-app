@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getCurrentWeather } from "@/utils/getCurrentWeather";
 
 export default async function Home() {
-  const res = await getCurrentWeather();
+  const res = await getCurrentWeather("Seoul");
 
   return (
     <>

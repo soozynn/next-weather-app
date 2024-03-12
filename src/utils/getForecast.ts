@@ -146,14 +146,14 @@ export interface Condition3 {
   code: number
 }
 
-export const getForecast = async (): Promise<Response> => {
+export const getForecast = async (location: string): Promise<Response> => {
   const res = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=Seoul&aqi=no`
+    `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q${location}&aqi=no`
   );
 
-  if (res.ok) {
-    return res.json();
+  if (!res.ok) {
+    throw new Error("날씨 정보를 가져올 수 없습니다.");
   }
 
-  throw new Error("날씨 정보를 가져올 수 없습니다.");
+  return res.json();
 }
