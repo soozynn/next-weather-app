@@ -1,4 +1,4 @@
-export type Response = {
+export interface Response {
   year: number
   month: number
   day: number

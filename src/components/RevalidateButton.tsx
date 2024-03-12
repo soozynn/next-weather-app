@@ -2,9 +2,9 @@
 
 import revalidate from "@/utils/revalidateTag";
 
-type Props = {
+interface Props {
   tag: string;
-};
+}
 
 export default function RevalidateButton({ tag }: Props) {
   const handleClickRevalidateButton = async () => {

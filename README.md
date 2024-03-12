@@ -22,8 +22,13 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Learn
 
+- Next.js는 무엇인가?
+  - SSG와 RSC의 차이
 - app Router: 파일 기반 라우팅
 - fetch 자동 캐시 기능
 - revalidateTag의 기능: 캐시 비우기
 - loading, error 페이지의 기능
 - 서버 컴포넌트와 클라이언트 컴포넌트
+- 메타데이터 다루기
+  - 정적 / 동적 메타데이터(generateMetadata)
+    layout 혹은 page 파일 & 서버 컴포넌트에서만 동작

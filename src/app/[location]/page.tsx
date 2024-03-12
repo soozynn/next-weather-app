@@ -5,7 +5,17 @@ type Props = {
   params: {
     location: string;
   };
+  searchParams: {
+    name: string;
+  };
 };
+
+export function generateMetadata({ searchParams }: Props) {
+  return {
+    title: `날씨 앱 - ${searchParams.name}`,
+    description: `${searchParams.name} 날씨를 알려드립니다`,
+  };
+}
 
 export default async function DetailSection({ params }: Props) {
   const locationName = params.location === "seoul" ? "서울" : "";
