@@ -1,4 +1,5 @@
 import HomeButton from "@/components/HomeButton";
+import { getForecast } from "@/utils/getForecast";
 
 type Props = {
   params: {
@@ -6,7 +7,9 @@ type Props = {
   };
 };
 
-export default function DetailSection({ params }: Props) {
+export default async function DetailSection({ params }: Props) {
+  const res = await getForecast();
+
   return (
     <>
       <h1>Detail {params.location}</h1>
