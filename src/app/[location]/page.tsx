@@ -18,7 +18,7 @@ export function generateMetadata({ searchParams }: Props) {
 }
 
 export default async function DetailSection({ params }: Props) {
-  const locationName = params.location === "seoul" ? "서울" : "";
+  const locationName = params.location === "seoul" ? "서울" : params.location;
   const weatherForecastFor3rdRes = await getForecast(params.location);
 
   return (

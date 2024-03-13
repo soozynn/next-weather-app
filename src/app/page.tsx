@@ -16,7 +16,7 @@ export default async function Home() {
           <span>{currentWeatherRes.current.condition.text}</span>
         </li>
         <li>
-          <Link href="/newyork">뉴욕</Link>
+          <Link href="/NYC">뉴욕</Link>
         </li>
         <li>
           <Link href="/london">런던</Link>
